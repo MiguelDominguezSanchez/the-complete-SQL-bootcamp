@@ -65,3 +65,22 @@ SELECT DISTINCT (rental_rate) FROM film;
 
 -- Solution
 SELECT DISTINCT rating FROM film;
+
+-- 8. COUNT
+-- -- The COUNT function returns the number of inputs rows 
+-- -- that match a specific condition of a query.
+-- 
+-- -- We can apply COUNT on a specific column
+-- -- or just pass COUNT(*), we will soon see 
+-- -- this should return the samen result.
+
+-- SELECT COUNT(name) FROM table;
+-- SELECT COUNT(DISTINCT(name)) FROM table;
+
+SELECT * FROM payment;
+SELECT COUNT(*) FROM payment;
+SELECT COUNT(amount) FROM payment;
+SELECT amount FROM payment;
+SELECT DISTINCT amount FROM payment;
+SELECT COUNT (DISTINCT amount) FROM payment;
+SELECT COUNT (DISTINCT (amount)) FROM payment;
