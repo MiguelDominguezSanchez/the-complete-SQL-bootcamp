@@ -247,3 +247,32 @@ ORDER BY store_id,first_name;
 
 SELECT store_id,first_name,last_name FROM customer
 ORDER BY store_id DESC, first_name ASC;
+
+-- 13. LIMIT
+-- -- -- The LIMIT command allows us to limit the 
+-- -- -- number of rows returned for a query.
+-- -- -- Useful for not wanting to return every single row in a table,
+-- -- -- but only view the top few rows to get an idea of the table layout.
+-- -- -- LIMIT also becomes useful in combination with ORDER BY.
+-- -- -- LIMIT goes at the very end of a query
+-- -- -- request and is the last command to be executed.
+-- -- -- Let's learn the basic syntax of LIMIT
+-- -- -- through some examples.
+
+SELECT * FROM payment
+ORDER BY payment_date;
+
+SELECT * FROM payment
+ORDER BY payment_date ASC;
+
+SELECT * FROM payment
+ORDER BY payment_date DESC
+LIMIT 5;
+
+SELECT * FROM payment
+WHERE amount != 0.00
+ORDER BY payment_date DESC
+LIMIT 5;
+
+SELECT * FROM payment
+LIMIT 1;
