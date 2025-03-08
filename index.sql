@@ -40,3 +40,28 @@ SELECT * FROM film;
 SELECT DISTINCT release_year FROM film;
 SELECT DISTINCT (release_year) FROM film;
 SELECT DISTINCT (rental_rate) FROM film;
+--
+
+-- 7. Challenge SELECT DISTINCT 
+-- -- Situation
+-- -- -- An Australian visitor isn't familiar with
+-- -- -- MPAA movie ratings (e.g PG, PG-13, R, etc...)
+-- 
+-- -- -- We want to know the types of ratings 
+-- -- -- we have in our database.
+--
+-- -- -- What ratings do we have available?
+
+-- SQL Challenge
+-- -- Use what you`ve learned about SELECT DISTINCT
+-- -- to retrieve the distinct rating
+-- -- types our fims could have in our database.
+
+-- Hints
+-- -- Use the film table
+-- -- Use SELECT * FROM film; 
+-- -- to see what columns are available.
+-- -- Or use drop down table menu in pgadmin.
+
+-- Solution
+SELECT DISTINCT rating FROM film;
