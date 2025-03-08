@@ -276,3 +276,42 @@ LIMIT 5;
 
 SELECT * FROM payment
 LIMIT 1;
+
+-- 14. Challenge ORDER BY
+-- -- -- Challenge Task
+-- -- -- -- We want to reward our first 10 paying customer.
+-- -- -- -- What are the customer ids of the first 10 
+-- -- -- -- customers who created a payment?
+
+-- -- Hints
+-- -- -- Use the payment table
+-- -- -- You will need to use both ORDER BY and LIMIT
+-- -- -- Remember you may need to specify ASC or DESC.
+
+SELECT customer_id FROM payment
+ORDER BY payment_date ASC
+LIMIT 10;
+
+-- -- -- Challenge Task
+-- -- -- -- A customer wants to quickly rent a video to 
+-- -- -- -- video to watch over their short lunch break.
+-- -- -- -- What are the titles of the 5 shortest (in length of runtime) movies?
+
+-- -- Hints
+-- -- -- Use the film table
+-- -- -- Take a look the length column
+-- -- -- You can use ORDER BY and LIMIT
+-- -- -- Remember to use ASC or DESC to get desired results
+
+SELECT title,length FROM film
+ORDER BY length ASC
+LIMIT 5;
+
+-- -- -- Challenge Task
+-- -- -- -- Quick Bonus Question
+-- -- -- -- -- If the previous customer can watch any
+-- -- -- -- -- movie that is 50 minutes or less in run
+-- -- -- -- -- time, how many options does she have? 
+
+SELECT COUNT(title) FROM film
+WHERE length <= 50;
