@@ -84,3 +84,53 @@ SELECT amount FROM payment;
 SELECT DISTINCT amount FROM payment;
 SELECT COUNT (DISTINCT amount) FROM payment;
 SELECT COUNT (DISTINCT (amount)) FROM payment;
+
+--
+
+-- 9. SELECT WHERE - Part One
+-- -- SELECT and WHERE are the most fundamental SQL
+-- -- statements and you will dfind yourself using them often!
+--
+-- -- The where statement allows us to specify
+-- -- conditions on columns for the rows to be returned.
+
+-- Basic syntax example:
+-- -- SELECT column1, column2
+-- -- FROM table
+-- -- WHERE conditions;
+
+-- -- The WHERE clause appears immediately
+-- -- after the FROM clause of the SELECT statement
+
+-- -- The conditions are used to filter the rows
+-- -- returned from the SELECT statement.
+
+-- -- PostgreSQL provides a variaty of standard
+-- -- operators to construct the conditions.
+
+-- Comparison Operators
+-- -- Compare a column value to something.
+-- -- -- Is the price greater than $3.00?
+-- -- -- Is the pet's name equal to "Sam"
+
+-- -- -- -- = Equal
+-- -- -- -- > Greater than
+-- -- -- -- < Less than
+-- -- -- -- >= Greater than or equal to
+-- -- -- -- <= Less than or equal to
+-- -- -- -- <> or != Not equal to
+
+-- Logical Operators
+-- -- Allow us to combine multiple comparison operators
+-- -- -- AND
+-- -- -- OR
+-- -- -- NOT
+
+-- SELECT name,choice FROM table
+-- Now let's get only the people named David
+
+-- SELECT name FROM table 
+-- WHERE name = 'DAVID'
+
+-- SELECT name,choice FROM table
+-- WHERE name = 'David' AND choice='Red'
