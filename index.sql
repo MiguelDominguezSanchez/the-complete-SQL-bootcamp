@@ -357,3 +357,44 @@ WHERE amount NOT BETWEEN 8 AND 9;
 
 SELECT * FROM payment 
 WHERE payment_date BETWEEN '2007-02-01' AND '2007-02-15';
+
+-- 16. IN
+-- -- -- In certain cases you want to check for
+-- -- -- multiple possible value options, for example, 
+-- -- -- if a user's name shows up IN a list
+-- -- -- of know names.
+-- 
+-- -- -- We can use the IN operator to create a
+-- -- -- condition that checks to see if a value in included
+-- -- -- in a list of multiple oprions.
+--
+-- -- -- The general syntax is:
+-- -- -- -- value IN (oprion1,option2,...,option_n)
+
+-- Example query:
+-- -- -- SELECT color FROM table
+-- -- -- WHERE color IN ('red','blue')
+--
+-- -- -- SELECT color FROM table
+-- -- -- WHERE color IN ('red','blue','green')
+
+-- -- -- SELECT color FROM table
+-- -- -- WHERE color NOT IN ('red','blue')
+
+SELECT * FROM payment
+LIMIT 2;
+
+SELECT DISTINCT(payment) FROM payment
+LIMIT 2;
+
+SELECT DISTINCT(amount) FROM payment
+ORDER BY amount;
+
+SELECT * FROM payment
+WHERE amount IN (0.99,1.98,1.99)
+
+SELECT COUNT(*) FROM payment
+WHERE amount NOT IN (0.99,1.98,1.99);
+
+SELECT * FROM customer
+WHERE first_name IN ('John','Jake','Julie');
