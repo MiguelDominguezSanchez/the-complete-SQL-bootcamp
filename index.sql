@@ -218,3 +218,32 @@ WHERE title = 'Outlaw Hanky';
 
 SELECT phone FROM address
 WHERE address = '259 Ipoh Drive';
+
+-- 12. ORDER BY
+-- -- -- Basic syntax for ORDER BY
+-- -- -- -- SELECT column_1,column_2
+-- -- -- -- FROM table
+-- -- -- -- ORDER BY column_1 ASC/DESC
+-- -- -- -- Use ASC to sort in ascending order 
+-- -- -- -- Use DESC to sort in descending order 
+-- -- -- -- If you leave it blank, ORDER BY uses ASC by default.
+
+SELECT * FROM customer;
+
+SELECT * FROM customer
+ORDER BY first_name ASC;
+
+SELECT * FROM customer
+ORDER BY first_name DESC;
+
+SELECT * FROM customer 
+ORDER BY store_id;
+
+SELECT store_id,first_name,last_name FROM customer
+ORDER BY store_id;
+
+SELECT store_id,first_name,last_name FROM customer
+ORDER BY store_id,first_name;
+
+SELECT store_id,first_name,last_name FROM customer
+ORDER BY store_id DESC, first_name ASC;
