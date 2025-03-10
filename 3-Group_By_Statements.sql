@@ -65,3 +65,73 @@ GROUP BY DATE(payment_date)
 SELECT DATE(payment_date),SUM(amount) FROM payment
 GROUP BY DATE(payment_date)
 ORDER BY SUM(amount) DESC
+
+-- 5. GROUP BY - Challenge
+
+-- -- -- We have two staff members, with Staff IDs 1 and 2.
+-- -- -- We want to give a bonus to the
+-- -- -- staff member that handled the most payments.
+-- -- -- (Most in terms of number of payments processed, not total dollar amount)
+-- -- -- 
+-- -- -- How many payments did each staff
+-- -- -- member handle and who gets the bonus?
+
+-- Hints
+-- -- -- Use the payment table
+-- -- -- Undertand the different between COUNT and SUM
+
+SELECT staff_id,COUNT(amount)
+FROM payment
+GROUP BY staff_id
+
+--
+
+-- -- -- Corporate HQ is conducting a study on the 
+-- -- -- relantionship between replacement cost 
+-- -- -- and a movie MPAA rating (e.g. G, PG, R, etc...).
+
+--
+
+-- -- -- What is the average replacement cost per 
+-- -- -- MPAA rating?
+-- -- -- -- Note: You may need to expand the AVG
+-- -- -- -- column to view correct results.
+
+-- Hints
+-- -- -- Use the film table
+-- -- -- Recall that AVG returns back many
+-- -- -- significant digits, you can either stretch 
+-- -- -- the column or use ROUND() to fox this issue.
+
+SELECT rating,AVG(replacement_cost)
+FROM film 
+GROUP BY rating 
+
+--
+
+SELECT rating,
+ROUND(AVG(replacement_cost),2)
+FROM film
+GROUP BY rating
+
+--
+
+-- -- -- We are running a promotion to reward our 
+-- -- -- top 5 customer with coupons.
+-- -- --
+-- -- -- What are the customer ids of the top 5 
+-- -- -- customers by total spend?
+
+-- Hints 
+-- -- -- Use the payment table 
+-- -- -- Use ORDER BY 
+-- -- -- Recall you can order by the results of an 
+-- -- -- aggregate function 
+-- -- -- 
+-- -- -- You may want to use LIMIT to view just the top 5
+
+SELECT customer_id,SUM(amount)
+FROM payment
+GROUP BY customer_id 
+ORDER BY SUM(amount) DESC
+LIMIT 5
