@@ -32,3 +32,30 @@ WHERE amount > 2
 SELECT customer_id,amount AS new_name
 FROM payment
 WHERE amount > 2
+
+-- -- -- 
+
+-- -- -- 4. Inner Joins
+
+SELECT * 
+FROM payment
+
+--
+
+SELECT * FROM payment
+INNER JOIN customer
+ON payment.customer_id = customer.customer_id
+
+-- 
+
+SELECT payment_id,payment.customer_id,first_name
+FROM payment
+INNER JOIN customer 
+ON payment.customer_id = customer.customer_id
+
+--
+
+SELECT payment_id,payment.customer_id,first_name
+FROM customer
+INNER JOIN payment
+ON payment.customer_id = customer.customer_id
