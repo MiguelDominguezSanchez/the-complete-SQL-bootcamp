@@ -164,4 +164,44 @@ GROUP BY store_id
 --
 SELECT store_id,COUNT(customer_id) FROM customer
 GROUP BY store_id
-HAVING COUNT(customer_id) > 300
+HAVING COUNT(customer_id) > 300 
+--
+
+-- -- -- 7. HAVING - Challenge Tasks
+
+-- Challenge
+-- -- -- We are launching a platinum service for 
+-- -- -- our most loyal customers. We will assign
+-- -- -- platinum status to customers that have
+-- -- -- had 40 or more transaction payments.
+-- -- -- 
+-- -- -- What customer_ids are eligible for 
+-- -- -- platinum status?
+
+-- Hints 
+-- -- -- Use the payment table 
+-- -- -- Recall any column can be passed into a
+-- -- -- COUNT() call
+
+SELECT customer_id,COUNT(*)
+FROM payment
+GROUP BY customer_id
+HAVING COUNT(*)>=40;
+
+-- Challenge
+-- -- -- What are the customer ids of customers
+-- -- -- who have spent more than $100 in 
+-- -- -- payment transactions with our staff_id
+-- -- -- member 2?
+
+-- Hints
+-- -- -- Use the payment table
+-- -- -- Remember to use WHERE to first filter
+-- -- -- based on the staff_id, then use the 
+-- -- -- GROUP BY clause
+
+SELECT customer_id,SUM(amount)
+FROM payment
+WHERE staff_id = 2
+GROUP BY customer_id
+HAVING SUM(amount)>100
