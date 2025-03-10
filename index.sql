@@ -473,4 +473,61 @@ SELECT * FROM customer
 WHERE first_name LIKE 'A%' AND last_name NOT LIKE 'B%'
 ORDER BY last_name;
 
+-- 18. General Challenge 1
+-- -- -- How many payment transactions were greater than $5.00?
+-- -- -- -- Hints
+-- -- -- -- -- You will need to use the payment table 
+-- -- -- -- -- You will also need to use COUNT and WHERE
+-- -- -- -- -- along with some conparison operator
 
+SELECT COUNT(amount) FROM payment
+WHERE amount > 5;
+
+-- -- -- How many actors have a first name that starts with the letter P?
+-- -- -- -- Hints
+-- -- -- -- -- You will need to use the actor table
+-- -- -- -- -- You will also need to use LIKE and a wildcard operator, such as % or_
+
+SELECT COUNT(*) FROM actor
+WHERE first_name LIKE 'P%';
+
+-- -- -- How many unique districts are our customers from?
+-- -- -- -- Hints
+-- -- -- -- -- You will need to use the address table
+-- -- -- -- -- You will also need to use COUNT and DISTINCT
+
+SELECT COUNT(DISTINCT(district)) 
+FROM address;
+
+-- -- -- Retrieve the list of names for those distinct
+-- -- -- districts from the previous question.
+
+-- -- -- Hints 
+-- -- -- -- You will again need to use the address table
+-- -- -- -- This will be very similar to the previous
+-- -- -- -- challenge
+
+SELECT DISTINCT(district) FROM address;
+
+-- -- -- How many films hace a rating of R and a 
+-- -- -- replacement cost between $5 and $15?
+
+-- -- -- Hints 
+-- -- -- -- You will need to use the film table.
+-- -- -- -- You may also need to use BETWEEN and a 
+-- -- -- -- WHERE statement with a comparison operator.
+
+SELECT COUNT(*) FROM film
+WHERE rating = 'R' 
+AND replacement_cost BETWEEN 5 AND < 15;
+
+-- -- -- How many films have the word Truman
+-- -- -- somewhere in the title?
+
+-- -- -- Hints
+-- -- -- -- You will need to use the film table
+-- -- -- -- You will also need to use LIKE with a wildcard
+-- -- -- operator.
+
+SELECT COUNT(*) FROM film
+WHERE title LIKE '%Truman%';
