@@ -229,3 +229,28 @@ SET last_login = CURRENT_TIMESTAMP
 RETURNING email,created_on,last_login
 
 --
+
+-- -- -- 8. DELETE
+
+-- -- -- We can delete rows based on their ...
+-- -- -- Similar to ...
+
+SELECT * FROM job
+
+--
+
+INSERT INTO job(job_name)
+VALUES 
+('Cowboy')
+
+--
+
+SELECT * FROM job
+
+--
+
+DELETE FROM job
+WHERE job_name = 'Cowboy'
+RETURNING job_id,job_name
+
+--
