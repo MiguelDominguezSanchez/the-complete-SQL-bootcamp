@@ -310,3 +310,64 @@ WHERE NOT EXISTS
 (SELECT * FROM payment as p 
 WHERE p.customer_id = c.customer_id
 AND amount > 11)
+
+-- 
+
+-- -- -- 9. Self-Join
+
+-- A self-join is a query in which a table is joined to itself
+-- Self-joins are useful for comparing values 
+-- in a column of rows within the same table.
+
+-- The self join can be viewed as a join of two
+-- copies of the same table.
+--
+-- The table is not actually copied, but SQL 
+-- performs the command as though it were.
+-- its simply standard JOIN syntax with the same table in both parts.
+
+-- However, when using a self join it is 
+-- necessary to use an alias for the table,
+-- otherwise the table names would be ambiguous.
+--
+-- Let's see a syntax example of this.
+
+-- Syntax 
+-- -- -- SELECT tableA.col, tableB.col 
+-- -- -- FROM table AS tableA
+-- -- -- JOIN table AS tableB ON 
+-- -- -- tableA.some_col = tableB.other_col
+
+--
+
+SELECT emp.name, report.name AS rep 
+FROM employees AS emp 
+JOIN employees AS report ON 
+emp.emp_id = report.report_id
+
+-- 
+
+SELECT * FROM film
+
+--
+
+SELECT title,length FROM film 
+WHERE length = 117 
+
+--
+
+SELECT title,length 
+FROM film 
+
+--
+
+SELECT f1.title, f2.title, f1.length 
+FROM film
+
+--
+
+SELECT f1.title, f2.title, f1.length 
+FROM film AS f1 
+INNER JOIN film AS f2 ON 
+f1.film_id != f2.film_id 
+AND f1.length = f2.length
