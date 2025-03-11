@@ -71,3 +71,32 @@ SUM(CASE rental_rate
     ELSE 0
 END) AS premium
 FROM film
+
+-- 
+
+-- -- -- 3. CASE - Challenge Task
+
+--
+
+SELECT 
+SUM(
+CASE rating
+    WHEN 'R' THEN 1 ELSE 0
+    END
+) AS r 
+FROM film
+
+-- -- -- 
+
+SELECT 
+SUM(
+CASE rating
+    WHEN 'R' THEN 1 ELSE 0
+    END
+) AS r,
+SUM(
+CASE rating
+    WHEN 'PG-13' THEN 1 ELSE 0
+    END
+) AS pg13
+FROM film
