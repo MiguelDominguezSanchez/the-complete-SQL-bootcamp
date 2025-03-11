@@ -166,4 +166,25 @@ FROM payment
 
 SELECT COUNT(*)
 FROM payment
-WHERE EXTRACT(dow FROM payment_date)=1
+WHERE EXTRACT(dow FROM payment_date)=1 
+
+-- -- -- 
+
+-- -- -- 6. Mathematical Functions and Operators
+
+-- -- -- 
+
+SELECT * FROM film
+
+-- -- -- 
+
+SELECT ROUND(rental_rate/replacement_cost,2) FROM film
+
+-- -- --
+
+SELECT ROUND(rental_rate/replacement_cost,2)*100 FROM film
+
+-- -- --
+
+SELECT ROUND(rental_rate/replacement_cost,4)*100 AS percent_cost
+FROM film
