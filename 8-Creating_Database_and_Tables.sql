@@ -309,3 +309,19 @@ VALUES
 -- 
 
 SELECT * FROM new_info
+
+--
+
+ALTER TABLE new_info
+DROP COLUMN people
+
+--
+
+SELECT * FROM new_info
+
+-- 
+
+ALTER TABLE new_info 
+DROP COLUMN people 
+
+--
