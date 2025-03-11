@@ -188,3 +188,61 @@ SELECT ROUND(rental_rate/replacement_cost,2)*100 FROM film
 
 SELECT ROUND(rental_rate/replacement_cost,4)*100 AS percent_cost
 FROM film
+
+-- -- --
+
+SELECT 0.1 * replacement_cost AS deposit 
+FROM film
+
+-- -- -- 
+
+-- -- -- 7. String Functions and Operators
+
+-- -- -- 
+
+SELECT * FROM customer
+
+-- 
+
+SELECT LENGTH(first_name) FROM customer
+
+-- 
+
+SELECT first_name || last_name 
+FROM customer
+
+--
+
+SELECT first_name || ' ' || last_name
+FROM customer
+
+-- 
+
+SELECT first_name || '--' || last_name
+FROM customer
+
+-- 
+
+SELECT first_name || ' ' || last_name AS full_name
+FROM customer
+
+-- 
+
+SELECT upper(first_name) || ' ' || upper(last_name) AS full_name
+FROM customer
+
+--
+
+SELECT * 
+FROM customer
+
+--
+
+SELECT LEFT(first_name,1) || last_name || '@gmail.com'
+FROM customer 
+
+--
+
+SELECT LOWER(LEFT(first_name,1)) || LOWER(last_name) || '@gmail.com'
+AS customer_email
+FROM customer
