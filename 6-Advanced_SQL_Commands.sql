@@ -139,3 +139,31 @@ FROM payment
 
 SELECT TO_CHAR(payment_date,'dd/MM/YYYY')
 FROM payment
+
+--
+
+-- -- -- 5. Timestamps and Extract - Challenge Tasks
+
+-- -- -- During which months did payments occur?
+-- -- -- Format your answer to return back the full month name.
+
+-- Hints
+-- -- -- You do not need to use EXTRACT for this query.
+
+SELECT DISTINCT(TO_CHAR(payment_date,'MONTH'))
+FROM payment
+
+-- -- -- How many payments occurred on a Monday?
+-- -- -- NOTE: We didn't show you exactly how to 
+-- -- -- do this, but use the documentation or 
+-- -- -- Google to figure this out!
+
+-- Hints
+-- -- -- Use EXTRACT
+-- -- -- Review the dow keyword 
+-- -- -- PostgreSQL considers Sunday the start of
+-- -- -- a week (indexed at 0)
+
+SELECT COUNT(*)
+FROM payment
+WHERE EXTRACT(dow FROM payment_date)=1
