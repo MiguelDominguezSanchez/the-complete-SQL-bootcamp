@@ -222,3 +222,17 @@ SELECT (
  SELECT * FROM c_info 
 
  --
+
+ DROP VIEW c_info
+
+ --
+
+ -- -- -- 8. Import and Export
+
+ CREATE TABLE simple(
+a INTEGER,
+b INTEGER,
+c INTEGER
+)
+
+--
