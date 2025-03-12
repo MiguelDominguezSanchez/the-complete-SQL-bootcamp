@@ -167,3 +167,58 @@ SELECT (
  SELECT * FROM depts 
 
  --
+
+ SELECT (
+    SUM(CASE WHEN department = 'A' THEN 1 ELSE 0 END)/
+    NULLIF(SUM(CASE WHEN department = 'B' THEN 1 ELSE 0 END),0)
+
+ ) AS department_ratio 
+ FROM depts
+
+ -- -- -- 7. Views
+
+ --
+
+ SELECT first_name,last_name,address FROM customer 
+ INNER JOIN address 
+ ON customer.address_id = address.address_id
+
+ -- 
+
+ CREATE VIEW customer_info AS
+ SELECT first_name,last_name,address FROM customer 
+ INNER JOIN address 
+ ON customer.address_id = address.address_id
+
+ --
+
+ SELECT * FROM customer_info 
+
+ --
+
+ CREATE OR REPLACE VIEW customer_info AS
+ SELECT first_name,last_name,address,district FROM customer 
+ INNER JOIN address 
+ ON customer.address_id = address.address.address_id
+
+ --
+
+ SELECT * FROM customer_info
+
+ --
+
+ DROP VIEW IF EXISTS customer_info
+
+ --
+
+ ALTER VIEW customer_info RENAME to c_info
+
+ --
+
+ SELECT * FROM customer_info 
+
+ --
+
+ SELECT * FROM c_info 
+
+ --
