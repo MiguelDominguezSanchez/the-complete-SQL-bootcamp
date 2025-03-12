@@ -100,3 +100,27 @@ CASE rating
     END
 ) AS pg13
 FROM film
+
+-- -- -- 
+
+-- -- -- 4. COALESCE
+
+-- -- -- 5. CAST
+
+SELECT CAST('5' AS INTEGER)
+
+--
+
+SELECT '10'::INTEGER 
+
+-- 
+
+SELECT * FROM rental
+
+--
+
+SELECT CAST(inventory_id AS VARCHAR) FROM rental
+
+--
+
+SELECT CHAR_LENGTH(CAST(inventory_id AS VARCHAR)) FROM rental
